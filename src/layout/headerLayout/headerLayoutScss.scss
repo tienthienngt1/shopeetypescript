@@ -1,0 +1,19 @@
+@import "../../scss/variablesScss.scss";
+.header {
+	background: $backgroundColorHeader;
+	&_float::after {
+		content: "";
+		clear: both;
+	}
+	span::first-child {
+		padding-left: 0;
+	}
+	span {
+		padding-left: 0.5rem;
+		cursor: pointer;
+		transition: all 0.5s;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

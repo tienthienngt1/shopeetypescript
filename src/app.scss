@@ -1,0 +1,14 @@
+@import "./scss//variablesScss.scss";
+
+html {
+	font-size: 62.5%;
+	font-family: "Roboto", sans-serif;
+	cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1229.ani), url(https://cur.cursors-4u.net/games/gam-13/gam1229.png);
+	background-color: $backgroundColorLightMode;
+}
+* {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
