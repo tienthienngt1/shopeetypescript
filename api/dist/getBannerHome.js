@@ -36,27 +36,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.getServerSideProps = void 0;
-var head_1 = require("next/head");
-var carousel_1 = require("../components/home/carousel");
-var header_1 = require("../components/home/header");
-var Home = function () {
-    return (React.createElement("div", null,
-        React.createElement(head_1["default"], null,
-            React.createElement("title", null, "Shopee Vi\u1EC7t Nam | Mua v\u00E0 B\u00E1n H\u00E0ng online"),
-            React.createElement("meta", { name: "description", content: "Shopee, E-commerce" }),
-            React.createElement("link", { rel: "icon", href: "/favicon.ico" })),
-        React.createElement(header_1["default"], null),
-        React.createElement(carousel_1["default"], null)));
-};
-exports["default"] = Home;
-function getServerSideProps() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/, {
-                    props: {}
-                }];
-        });
+exports.getBannerHome = void 0;
+var axios_1 = require("axios");
+exports.getBannerHome = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var error_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                return [4 /*yield*/, axios_1["default"].post("https://shopee.vn/api/v4/banner/batch_list_by_spaces", {
+                        spaces: [
+                            {
+                                space_key: "PC-VN-HOME_CAROUSEL_01"
+                            },
+                            {
+                                space_key: "PC-VN-HOME_SKINNY_01"
+                            },
+                            {
+                                space_key: "PC-VN-HOME_NUZ_CAROUSEL_01"
+                            },
+                        ],
+                        extra_data: "{}"
+                    })];
+            case 1: return [2 /*return*/, _a.sent()];
+            case 2:
+                error_1 = _a.sent();
+                console.log(error_1);
+                return [2 /*return*/, { error: true }];
+            case 3: return [2 /*return*/];
+        }
     });
-}
-exports.getServerSideProps = getServerSideProps;
+}); };

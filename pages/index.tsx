@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Container from "../components/common/Container";
+import CarouselHome from "../components/home/carousel";
 import HeaderHome from "../components/home/header";
-
 const Home: NextPage = () => {
 	return (
 		<div>
@@ -12,8 +11,14 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<HeaderHome />
+			<CarouselHome />
 		</div>
 	);
 };
 
 export default Home;
+export async function getServerSideProps() {
+	return {
+		props: {},
+	};
+}

@@ -15,7 +15,7 @@ var SubHeaderHomeLeftStyle = styled_components_1["default"].div(templateObject_2
 var SubHeaderHomeRightStyle = styled_components_1["default"].div(templateObject_3 || (templateObject_3 = __makeTemplateObject([""], [""])));
 var NotifyTooltipStyle = styled_components_1["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n\twidth: 400px;\n\theight: 400px;\n\t.headerNotifyTooltip {\n\t\theight: 350px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tflex-direction: column;\n\t}\n\t.footerNotifyTooltip {\n\t\twidth: 100%;\n\t\theight: 50px;\n\t\tdiv {\n\t\t\tpadding: 15px;\n\t\t\twidth: 48%;\n\t\t\tmargin: 0 1%;\n\t\t\theight: 100%;\n\t\t\tdisplay: inline-block;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 1.6rem;\n\t\t\tbackground-color: #d7d7d7;\n\t\t}\n\t\tdiv:first-child {\n\t\t}\n\t\tdiv:last-child {\n\t\t\tcolor: blue;\n\t\t}\n\t}\n"], ["\n\twidth: 400px;\n\theight: 400px;\n\t.headerNotifyTooltip {\n\t\theight: 350px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tflex-direction: column;\n\t}\n\t.footerNotifyTooltip {\n\t\twidth: 100%;\n\t\theight: 50px;\n\t\tdiv {\n\t\t\tpadding: 15px;\n\t\t\twidth: 48%;\n\t\t\tmargin: 0 1%;\n\t\t\theight: 100%;\n\t\t\tdisplay: inline-block;\n\t\t\ttext-align: center;\n\t\t\tfont-size: 1.6rem;\n\t\t\tbackground-color: #d7d7d7;\n\t\t}\n\t\tdiv:first-child {\n\t\t}\n\t\tdiv:last-child {\n\t\t\tcolor: blue;\n\t\t}\n\t}\n"])));
 var SubHeaderHome = function () {
-    var _a = react_1.useState(true), tooltip = _a[0], setTooltip = _a[1];
+    var _a = react_1.useState(false), tooltip = _a[0], setTooltip = _a[1];
     var handleMouseEnter = function () { return setTooltip(true); };
     var handleMouseLeave = function () {
         setTooltip(false);
@@ -23,6 +23,9 @@ var SubHeaderHome = function () {
             setTooltip(true);
         }, 10);
     };
+    react_1.useEffect(function () {
+        setTooltip(true);
+    }, []);
     return (React.createElement(React.Fragment, null,
         React.createElement(SubHeaderHomeStyle, null,
             React.createElement(SubHeaderHomeLeftStyle, null,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
 	Bell,
@@ -71,7 +71,7 @@ const NotifyTooltipStyle = styled.div`
 `;
 
 const SubHeaderHome = () => {
-	const [tooltip, setTooltip] = useState(true);
+	const [tooltip, setTooltip] = useState(false);
 	const handleMouseEnter = () => setTooltip(true);
 	const handleMouseLeave = () => {
 		setTooltip(false);
@@ -79,6 +79,9 @@ const SubHeaderHome = () => {
 			setTooltip(true);
 		}, 10);
 	};
+	useEffect(() => {
+		setTooltip(true);
+	}, []);
 	return (
 		<>
 			<SubHeaderHomeStyle>
